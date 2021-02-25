@@ -95,4 +95,5 @@ jobs:
           push: |
             ${{ startsWith(github.ref, 'refs/heads/releases')
               || startsWith(github.ref, 'refs/heads/rfc-18/ropsten') }}
-          # TODO: consider/test adding cache
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache
